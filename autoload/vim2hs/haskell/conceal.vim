@@ -23,7 +23,7 @@ function! vim2hs#haskell#conceal#wide() " {{{
 
   syntax match hsStructure
     \ "\s::\_s"ms=s+1,me=e-1
-    \ display conceal cchar=⦂
+    \ display conceal cchar=∷
 
   syntax match hsOperator
     \ "\s>>\_s"ms=s+1,me=e-1
@@ -82,11 +82,11 @@ endfunction " }}}
 " These work badly in GVIM with the fonts I've tested.
 function! vim2hs#haskell#conceal#bad() " {{{
   syntax match hsKeyword
-    \ "\<elem\>"
+    \ "`elem`"
     \ display conceal cchar=∈
 
   syntax match hsKeyword
-    \ "\<notElem\>"
+    \ "`notElem`"
     \ display conceal cchar=∉
 
   syntax match hsStructure

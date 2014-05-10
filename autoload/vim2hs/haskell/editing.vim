@@ -67,6 +67,10 @@ function! vim2hs#haskell#editing#indentexpr(lnum) " {{{
 
   endif
 
+  if getline('.') =~ '^[ \t]*|'
+    let l:indent = &shiftwidth
+  endif
+
   if synIDattr(synIDtrans(synID(a:lnum - 1, l:indent, 1)), 'name')
     \ =~# '\%(Comment\|String\)$'
     return indent(a:lnum - 1)
